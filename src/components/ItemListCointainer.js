@@ -1,12 +1,33 @@
-import Producto from "./Pages/Productos";
+import { useState, useEffect} from  'react'
+import { getProducts, getProductByCategory } from './AsyncMock'
+import ItemList from './ItemList'
 
-function ItemListCointainer({mensaje}){
-    return(
+import { useParams } from 'react-router-dom'
+
+
+const ItemListContainer = ({ greeting }) => {
+    const [products, setProducts] = useState([])
+
+    const { categoryId } = useParams()
+
+    useEffect(() => {
+        const asynFunc = categoryId ? getProductByCategory : getProducts
+
+        asynFunc(categoryId)
+            .then(response => {
+                setProducts(response)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }, [categoryId])
+
+    return (
         <div>
-        <h1>{mensaje}</h1>
-        <Productos/>
+            <h1>{greeting}</h1>
+            <ItemList products={products}/>
         </div>
     )
 }
 
-export default ItemListCointainer;
+export default ItemListContainer;

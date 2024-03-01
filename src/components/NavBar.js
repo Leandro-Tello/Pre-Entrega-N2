@@ -15,12 +15,10 @@ function NavBar(){
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="/">Inicio</Nav.Link>
-                        <Nav.Link href="/Nosotros">Nosotros</Nav.Link>
-                        <Nav.Link href="/Productos">Productos</Nav.Link>
                         <NavDropdown title="Categorias" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/Undefined">Undefined</NavDropdown.Item>
-                            <NavDropdown.Item href="/Undefined">Undefined</NavDropdown.Item>
-                            <NavDropdown.Item href="/Undefined">Undefined</NavDropdown.Item>
+                            <NavDropdown.Item href="/category/men's clothing">ropa</NavDropdown.Item>
+                            <NavDropdown.Item href="/category/accesorios">accesorios</NavDropdown.Item>
+                            <NavDropdown.Item href="/category/prueba">prueba</NavDropdown.Item>
                         </NavDropdown>
                         <CartWidget/>
                     </Nav>
