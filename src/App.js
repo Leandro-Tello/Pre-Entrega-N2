@@ -7,8 +7,8 @@ function App(){
 
     return (
         <div>
-        <NavBar/>
         <BrowserRouter>
+            <NavBar/>
             <Routes>
             <Route path='/' element={<ItemListContainer/>}/>
             <Route path='/category/:categoryId' element={<ItemListContainer/>}/>

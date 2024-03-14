@@ -1,31 +1,25 @@
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+// import Container from 'react-bootstrap/Container';
+// import Nav from 'react-bootstrap/Nav';
+// import Navbar from 'react-bootstrap/Navbar';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
+
+
+import { NavLink, Link,} from 'react-router-dom';
 
 import CartWidget from './CartWidget';
 
-function NavBar(){
+const NavBar = () => {
     return (
-    <div>
-        <Navbar expand="lg" className="bg-body-tertiary">
-            <Container>
-                    <Navbar.Brand href="/">Gothic Store</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link href="/">Inicio</Nav.Link>
-                        <NavDropdown title="Categorias" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/category/men's clothing">ropa</NavDropdown.Item>
-                            <NavDropdown.Item href="/category/accesorios">accesorios</NavDropdown.Item>
-                            <NavDropdown.Item href="/category/prueba">prueba</NavDropdown.Item>
-                        </NavDropdown>
-                        <CartWidget/>
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
-    </div>
+        <nav>
+            <Link to='/'></Link>
+            <div>
+                <NavLink to={`/category/men's clothing`}><h4>Ropa de Hombre</h4></NavLink>
+                <NavLink to={`/category/jewelery`}><h4>Joyeria</h4></NavLink>
+                <NavLink to={`/category/electronics`}><h4>Electronica</h4></NavLink>
+                <NavLink to={`/category/women's clothing`}><h4>Ropa de Mujer</h4></NavLink>
+            </div>
+            <CartWidget/>
+        </nav>
     );
 }
 
